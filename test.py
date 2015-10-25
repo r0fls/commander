@@ -1,7 +1,7 @@
 import unittest
 import connect, os
 
-DIR = os.environ.get('TRAVIS_BUILD_DIR') or os.getcwd()
+DIR = os.environ.get('CI_HOME') or os.getcwd()
 COMMAND="cd {}; ls".format(DIR)
 HOST="localhost"
 class TestConnection(unittest.TestCase):
