@@ -2,7 +2,7 @@ import unittest
 import connect, os
 
 DIR = os.environ.get('CI_HOME') or os.getcwd()
-COMMAND="cd {}; ls".format(DIR)
+COMMAND="cd {0}; ls".format(DIR)
 HOST="localhost"
 class TestConnection(unittest.TestCase):
     global result
