@@ -21,5 +21,5 @@ if __name__=="__main__":
      import os
      os.getcwd()
      COMMAND="cd {}; ls".format(os.getcwd())
-     print run(HOST,COMMAND)
+     print(run(HOST,COMMAND))
 
