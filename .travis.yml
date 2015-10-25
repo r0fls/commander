@@ -10,6 +10,6 @@ python:
       - "nightly" # currently points to 3.6-dev
 before_script:
       - ssh-keygen -f id_rsa -t rsa -N ''
-      - cat ~/.ssh/id_rsa >> ~/.ssh/authorized_keys/
+      - cat ~/.ssh/id_rsa >> ~/.ssh/authorized_keys
       - echo -e "Host localhost\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 script: python test.py
