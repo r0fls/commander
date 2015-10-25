@@ -9,7 +9,7 @@ python:
       - "3.5-dev" # 3.5 development branch
       - "nightly" # currently points to 3.6-dev
 before_script:
-      - ssh-keygen -f id_rsa -t rsa -N ''
+      - ssh-keygen -f ~/.ssh/id_rsa -t rsa -N ''
       - ls ~/.ssh/*.pub
       - cat ./.ssh/id_rsa >> ~/.ssh/authorized_keys
       - echo -e "Host localhost\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
