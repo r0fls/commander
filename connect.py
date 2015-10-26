@@ -13,12 +13,12 @@ from collections import defaultdict
 results = defaultdict(lambda: defaultdict(dict))
 
 def run(host,command):
-    ssh = subprocess.Popen(["ssh", "%s" % host, command],
+    ssh, err = subprocess.Popen(["ssh", "%s" % host, command],
                        shell=False,
                        stdout=subprocess.PIPE,
-                       stderr=subprocess.PIPE)
+                       stderr=subprocess.PIPE).communicate()
     now = time.time()
-    results[host][command][now] = [i.strip('\n') for i in ssh.stdout.readlines()]
+    results[host][command][now] = [i.strip('\n') for i in ssh.decode('UTF-8').splitlines()]
     return results[host][command]
 
 
