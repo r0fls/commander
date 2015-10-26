@@ -21,6 +21,12 @@ def run(host,command):
     results[host][command][now] = [i.strip('\n') for i in ssh.decode('UTF-8').splitlines()]
     return results[host][command]
 
+def run_group(hosts,commands):
+    res = defaultdict(lambda: defaultdict(dict))
+    for host in hosts:
+        for command in commands:
+            res[host][command] = run(host,command)
+    return res
 
 if __name__=="__main__":
      HOST="localhost"
