@@ -16,3 +16,5 @@ before_script:
       - cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
       - echo -e "Host localhost\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 script: python test.py
+notifications:
+    email: false
