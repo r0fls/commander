@@ -7,11 +7,11 @@ Create a configuration file in the following format:
 
 `hosts;commands`
 
-For example:
+For example, if this is in a file called `config.txt`:
 
     localhost, user@otherhost; echo Hello World,pwd
     localhost; ps aux | grep grep
 
-Then you can call `parse.py config.txt` and it will run them.
+Then you can call `parse.py config.txt` and it will run the specified commands on the list of hosts.
 
 You will need SSH keys to be configured for all machines.
