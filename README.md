@@ -9,7 +9,9 @@ Create a configuration file in the following format:
 
 For example:
 
-`localhost,otherhost,blah;echo Hello World,pwd
-localhost;ps aux | grep grep`
+    localhost,user@otherhost;echo Hello World,pwd
+    localhost;ps aux | grep grep
 
 Then you can call `parse.py config.txt` and it will run them.
+
+You will need SSH keys to be configured for all machines.
