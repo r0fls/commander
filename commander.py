@@ -29,9 +29,8 @@ def run_group(hosts,commands):
     return res
 
 if __name__=="__main__":
-     HOST="localhost"
+     HOSTS=["localhost" for i in range(2)]
      import os
      os.getcwd()
      COMMAND="cd {}; ls".format(os.getcwd())
-     print(run(HOST,COMMAND))
-
+     print(run_group(HOSTS,[COMMAND,'pwd']))
